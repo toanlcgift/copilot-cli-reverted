@@ -121,6 +121,35 @@ Launch `copilot` in a folder that contains code you want to work with.
 
 By default, `copilot` utilizes Claude Sonnet 4.5. Run the `/model` slash command to choose from other available models, including Claude Sonnet 4 and GPT-5.
 
+### Connecting to an OpenAI-compatible endpoint
+
+Use the following steps if you are connecting to OpenAI, Ollama, vLLM, Foundry Local, or any other endpoint that is compatible with the OpenAI Chat Completions API.
+
+Set environment variables for your provider. For example, for a local Ollama instance:
+
+```bash
+export COPILOT_PROVIDER_BASE_URL=http://localhost:11434/v1
+export COPILOT_MODEL=YOUR-MODEL-NAME
+```
+
+Replace YOUR-MODEL-NAME with the name of the model you have pulled in Ollama (for example, llama3.2).
+
+For a remote OpenAI endpoint, also set your API key.
+
+```bash
+export COPILOT_PROVIDER_BASE_URL=https://api.openai.com/v1
+export COPILOT_PROVIDER_API_KEY=YOUR-OPENAI-API-KEY
+export COPILOT_MODEL=YOUR-MODEL-NAME
+```
+
+Replace YOUR-OPENAI-API-KEY with your OpenAI API key and YOUR-MODEL-NAME with the model you want to use (for example, gpt-4o).
+
+Start Copilot CLI.
+
+```bash
+node app.js
+```
+
 ### Experimental Mode
 
 Experimental mode enables access to new features that are still in development. You can activate experimental mode by:
